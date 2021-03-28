@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">BBC</string>
+    <string name="app_name">"BBC News Reader"</string>
+    <string name="search_for_article">Search for article..</string>
+    <string name="Dialog_message" translatable="false">AlertDialog</string>
+    <string name="Dialog_title" translatable="false">AlertDialog</string>
+    <string name="go_back_to_home_screen">Go Back to Home Screen</string>
+    <string name="bbc_news_reader">BBC News Reader</string>
+    <string name="bbc_homepage">BBC Website</string>
+    <string name="bbc_rss_feed">BBC RSS Feed</string>
 </resources>
