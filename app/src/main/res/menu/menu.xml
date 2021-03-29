@@ -3,6 +3,38 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:title="Nav"
+        android:icon="@drawable/ic_drawer"
+        android:id="@+id/drawer"
+        app:showAsAction="always"
+        />
+    <item
+        android:id="@+id/Filler1"
+        android:clickable="false"
+        android:icon="@drawable/ic_filler"
+        android:title="Filler1"
+        android:visible="true"
+        app:showAsAction="always" />
+    <item
+        android:title="Filler2"
+        android:icon="@drawable/ic_filler"
+        android:id="@+id/Filler2"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Filler3"
+        android:icon="@drawable/ic_filler"
+        android:id="@+id/Filler3"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Filler4"
+        android:icon="@drawable/ic_filler"
+        android:id="@+id/Filler4"
+        app:showAsAction="always"
+        />
+
+    <item
         android:title="BBC"
         android:icon="@drawable/ic_bbc"
         android:id="@+id/bbc"
@@ -20,6 +52,11 @@
         android:id="@+id/alertDialog"
         app:showAsAction="always"
         />
-
+    <item
+        android:title="Filler5"
+        android:icon="@drawable/ic_filler"
+        android:id="@+id/Filler5"
+        app:showAsAction="always"
+        />
 
 </menu>

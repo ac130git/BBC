@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.service.autofill.OnClickAction;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -36,7 +37,6 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     private WebView webView;
     public ProgressBar bar;
     public EditText textView2;
@@ -82,23 +82,34 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("Https://www.bbc.com/news");
         Button news = findViewById(R.id.news);
+        DrawerLayout drawer = findViewById(R.id.drawerLayout);
         NavigationView navigation = (NavigationView) findViewById(R.id.navlayout);
         navigation.setNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 
-        news.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.news:
                 Snackbar snackbar = Snackbar.make(news, "News have been updated.", Snackbar.LENGTH_LONG);
                 snackbar.show();
                 webView.reload();
                 webView.scrollTo(0,0);
                 bar.setVisibility(View.GONE);
+                webView.setVisibility(View.VISIBLE);
+                break;
+                    case R.id.info:
+                        Snackbar snackbar2 = Snackbar.make(info, "Search for news here.", Snackbar.LENGTH_LONG);
+                        snackbar2.show();
+                        break;
             }
-        });
+        };
+    };
+        news.setOnClickListener(listener);
+       info.setOnClickListener(listener);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -111,15 +122,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.drawer:
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
+                drawer.openDrawer((Gravity.LEFT));
+                bar.setVisibility(View.GONE);
+                webView.setVisibility(View.GONE);
+                break;
             case R.id.bbc:
                 Uri uri = Uri.parse( "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml" );
                 startActivity( new Intent( Intent.ACTION_VIEW, uri ) );
-                bar.setVisibility(View.INVISIBLE);
+                bar.setVisibility(View.GONE);
                 break;
             case R.id.sport:
                 Uri uri2 = Uri.parse( "https://www.bbc.com/sport" );
                 startActivity( new Intent( Intent.ACTION_VIEW, uri2 ) );
-                bar.setVisibility(View.INVISIBLE);
+                bar.setVisibility(View.GONE);
                 break;
             case R.id.alertDialog:
                 builder.setMessage(R.string.Dialog_message) .setTitle(R.string.Dialog_title);

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">"BBC News Reader"</string>
+    <string name="app_name">"BBC News"</string>
     <string name="search_for_article">Search for article..</string>
     <string name="Dialog_message" translatable="false">AlertDialog</string>
     <string name="Dialog_title" translatable="false">AlertDialog</string>
