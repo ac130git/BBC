@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@android:dimen/app_icon_size"
-        android:hint="@string/search_for_article" />
+        android:hint="@string/search_for_article"/>
 
         <Button
             android:id="@+id/search"
@@ -79,7 +79,8 @@
 <WebView
     android:id="@+id/webView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+    android:background="@drawable/background"/>
 
 
 
