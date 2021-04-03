@@ -12,7 +12,7 @@
         android:id="@+id/toolbar3"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="?attr/colorPrimary"
+        android:background="?attr/colorSecondaryVariant"
         android:minHeight="?attr/actionBarSize"
         android:text="BBC News Reader"
         android:theme="?attr/actionBarTheme"
@@ -39,14 +39,15 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
+            android:backgroundTint="@color/teal_700"
             android:text="\?" />
 
         <EditText
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@android:dimen/app_icon_size"
-        android:hint="@string/search_for_article"/>
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@android:dimen/app_icon_size"
+            android:hint="@string/search_for_article"/>
 
         <Button
             android:id="@+id/search"
@@ -55,6 +56,7 @@
             android:paddingEnd="50dp"
             android:textSize="10sp"
             android:textStyle="bold"
+            android:backgroundTint="@color/teal_700"
             android:text="/?"/>
 
 
@@ -66,6 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/bar"
+        android:backgroundTint="@color/teal_700"
         android:text="@string/load_news" />
 
     <ProgressBar
@@ -76,11 +79,11 @@
 
     </ProgressBar>
 
-<WebView
-    android:id="@+id/webView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background"/>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"/>
 
 
 

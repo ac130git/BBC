@@ -36,7 +36,7 @@ import android.view.View;
 import android.widget.Button;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class WorkActivity extends AppCompatActivity {
     private WebView webView;
     public ProgressBar bar;
     public EditText textView2;
@@ -48,27 +48,27 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.login:
-                    Intent intent = new Intent(MainActivity.this, StartPage.class);
+                    Intent intent = new Intent(WorkActivity.this, StartPage.class);
                     startActivity(intent);
                     break;
                 case R.id.BBCHome:
-                    Intent i = new Intent(MainActivity.this, MainActivity.class);
+                    Intent i = new Intent(WorkActivity.this, MainActivity.class);
                     startActivity(i);
                     break;
                 case R.id.BBCSports:
-                    Intent i2 = new Intent(MainActivity.this, SportActivity.class);
+                    Intent i2 = new Intent(WorkActivity.this, SportActivity.class);
                     startActivity(i2);
                     break;
                 case R.id.BBCWeather:
-                    Intent i4 = new Intent(MainActivity.this, WeatherActivity.class);
+                    Intent i4 = new Intent(WorkActivity.this, WeatherActivity.class);
                     startActivity(i4);
                     break;
                 case R.id.BBCMusic:
-                    Intent i5 = new Intent(MainActivity.this, MusicActivity.class);
+                    Intent i5 = new Intent(WorkActivity.this, MusicActivity.class);
                     startActivity(i5);
                     break;
                 case R.id.BBCWork:
-                    Intent i6 = new Intent(MainActivity.this, WorkActivity.class);
+                    Intent i6 = new Intent(WorkActivity.this, WorkActivity.class);
                     startActivity(i6);
                     break;
                 case R.id.RSSfeed:
@@ -86,17 +86,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_work);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar3);
         setSupportActionBar(myToolbar);
-        myToolbar.setTitle("");
         Button info = findViewById(R.id.info);
         bar = findViewById(R.id.bar);
         textView2 = findViewById(R.id.textView2);
         builder = new AlertDialog.Builder(this);
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("Https://www.bbc.com/news");
+        webView.loadUrl("https://www.bbc.com/worklife/?referer=https%3A%2F%2Fwww.bbc.com%2Freel");
         Button news = findViewById(R.id.news);
         DrawerLayout drawer = findViewById(R.id.drawerLayout);
         NavigationView navigation = (NavigationView) findViewById(R.id.navlayout);
@@ -109,22 +108,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.news:
-                Snackbar snackbar = Snackbar.make(news, "News have been updated.", Snackbar.LENGTH_LONG);
-                snackbar.show();
-                webView.reload();
-                webView.scrollTo(0,0);
-                bar.setVisibility(View.GONE);
-                webView.setVisibility(View.VISIBLE);
-                break;
+                        Snackbar snackbar = Snackbar.make(news, "News have been updated.", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                        webView.reload();
+                        webView.scrollTo(0,0);
+                        bar.setVisibility(View.GONE);
+                        webView.setVisibility(View.VISIBLE);
+                        break;
                     case R.id.info:
                         Snackbar snackbar2 = Snackbar.make(info, "Search for news here.", Snackbar.LENGTH_LONG);
                         snackbar2.show();
                         break;
-            }
+                }
+            };
         };
-    };
         news.setOnClickListener(listener);
-       info.setOnClickListener(listener);
+        info.setOnClickListener(listener);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -145,27 +144,27 @@ public class MainActivity extends AppCompatActivity {
                 webView.setVisibility(View.GONE);
                 break;
             case R.id.bbc:
-                Intent i2 = new Intent(MainActivity.this, MainActivity.class);
+                Intent i2 = new Intent(WorkActivity.this, MainActivity.class);
                 startActivity(i2);
                 bar.setVisibility(View.GONE);
                 break;
             case R.id.sport:
-                Intent i3 = new Intent(MainActivity.this, SportActivity.class);
+                Intent i3 = new Intent(WorkActivity.this, SportActivity.class);
                 startActivity(i3);
                 bar.setVisibility(View.GONE);
                 break;
             case R.id.weather:
-                Intent i4 = new Intent(MainActivity.this, WeatherActivity.class);
+                Intent i4 = new Intent(WorkActivity.this, WeatherActivity.class);
                 startActivity(i4);
                 bar.setVisibility(View.GONE);
                 break;
             case R.id.music:
-                Intent i5 = new Intent(MainActivity.this, MusicActivity.class);
+                Intent i5 = new Intent(WorkActivity.this, MusicActivity.class);
                 startActivity(i5);
                 bar.setVisibility(View.GONE);
                 break;
             case R.id.work:
-                Intent i6 = new Intent(MainActivity.this, WorkActivity.class);
+                Intent i6 = new Intent(WorkActivity.this, WorkActivity.class);
                 startActivity(i6);
                 bar.setVisibility(View.GONE);
                 break;

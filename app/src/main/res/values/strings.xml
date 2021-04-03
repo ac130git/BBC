@@ -5,6 +5,11 @@
     <string name="Dialog_title" translatable="false">AlertDialog</string>
     <string name="go_back_to_home_screen">Go Back to Home Screen</string>
     <string name="bbc_news_reader">BBC News Reader</string>
-    <string name="bbc_homepage">BBC Website</string>
+    <string name="bbc_homepage">BBC News</string>
     <string name="bbc_rss_feed">BBC RSS Feed</string>
+    <string name="load_news">LOAD NEWS</string>
+    <string name="bbc_sports">BBC Sports</string>
+    <string name="bbc_weather">BBC Weather</string>
+    <string name="bbc_music">BBC Music</string>
+    <string name="bbc_work">BBC Worklife</string>
 </resources>

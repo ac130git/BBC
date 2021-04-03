@@ -34,13 +34,13 @@ public class StartPage extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),"Welcome!",Toast.LENGTH_LONG).show();
                                 break;
                             case R.id.imageView2:
-                                Intent intent2 = new Intent(StartPage.this, MainActivity.class);
+                                Intent intent2 = new Intent(StartPage.this, SportActivity.class);
                                 startActivity(intent2);
                                 Toast.makeText(getApplicationContext(),"Welcome!",Toast.LENGTH_LONG).show();
                                 break;
                             case R.id.alert2:
                                 builder.setMessage(R.string.Dialog_message) .setTitle(R.string.Dialog_title);
-                                builder.setMessage("Click on approriate icon.")
+                                builder.setMessage("Click on appropriate icon.")
                                         .setCancelable(true)
                                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                             @Override

@@ -12,9 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BBC">
-        <activity android:name=".Fragment2"
+        <activity android:name=".WorkActivity"></activity>
+        <activity android:name=".MusicActivity" />
+        <activity android:name=".WeatherActivity" />
+        <activity android:name=".SportActivity" />
+        <activity
+            android:name=".Fragment2"
             tools:ignore="Instantiatable" />
-        <activity android:name=".Fragment1"
+        <activity
+            android:name=".Fragment1"
             tools:ignore="Instantiatable" />
         <activity android:name=".MainActivity" />
         <activity android:name=".StartPage">

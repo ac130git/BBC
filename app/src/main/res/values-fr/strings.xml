@@ -5,4 +5,9 @@
     <string name="bbc_news_reader">Telejournal BBC</string>
     <string name="bbc_homepage">Site Web BBC</string>
     <string name="bbc_rss_feed">BBC RSS Feed</string>
+    <string name="load_news">TELECHARGER NOUVELLES</string>
+    <string name="bbc_sports">BBC Sports</string>
+    <string name="bbc_weather">Meteo BBC</string>
+    <string name="bbc_music">Musique BBC</string>
+    <string name="bbc_work">Travail BBC</string>
 </resources>

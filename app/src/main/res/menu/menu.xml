@@ -8,31 +8,6 @@
         android:id="@+id/drawer"
         app:showAsAction="always"
         />
-    <item
-        android:id="@+id/Filler1"
-        android:clickable="false"
-        android:icon="@drawable/ic_filler"
-        android:title="Filler1"
-        android:visible="true"
-        app:showAsAction="always" />
-    <item
-        android:title="Filler2"
-        android:icon="@drawable/ic_filler"
-        android:id="@+id/Filler2"
-        app:showAsAction="always"
-        />
-    <item
-        android:title="Filler3"
-        android:icon="@drawable/ic_filler"
-        android:id="@+id/Filler3"
-        app:showAsAction="always"
-        />
-    <item
-        android:title="Filler4"
-        android:icon="@drawable/ic_filler"
-        android:id="@+id/Filler4"
-        app:showAsAction="always"
-        />
 
     <item
         android:title="BBC"
@@ -47,16 +22,36 @@
         app:showAsAction="always"
         />
     <item
+        android:title="Weather"
+        android:icon="@drawable/ic_bbcweather"
+        android:id="@+id/weather"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Music"
+        android:icon="@drawable/ic_bbcmusic"
+        android:id="@+id/music"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="Work"
+        android:icon="@drawable/ic_worklife"
+        android:id="@+id/work"
+        app:showAsAction="always"
+        />
+    <item
+        android:title="RSS"
+        android:icon="@drawable/ic_rss1"
+        android:id="@+id/rss"
+        app:showAsAction="always"
+        />
+
+    <item
         android:title="Report"
         android:icon="@drawable/ic_report"
         android:id="@+id/alertDialog"
         app:showAsAction="always"
         />
-    <item
-        android:title="Filler5"
-        android:icon="@drawable/ic_filler"
-        android:id="@+id/Filler5"
-        app:showAsAction="always"
-        />
+
 
 </menu>
