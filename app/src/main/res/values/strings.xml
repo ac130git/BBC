@@ -4,7 +4,7 @@
     <string name="Dialog_message" translatable="false">AlertDialog</string>
     <string name="Dialog_title" translatable="false">AlertDialog</string>
     <string name="go_back_to_home_screen">Go Back to Home Screen</string>
-    <string name="bbc_news_reader">BBC News Reader</string>
+    <string name="bbc_news_reader">BBC News Reader v1.0</string>
     <string name="bbc_homepage">BBC News</string>
     <string name="bbc_rss_feed">BBC RSS Feed</string>
     <string name="load_news">LOAD NEWS</string>

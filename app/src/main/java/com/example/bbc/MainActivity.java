@@ -72,10 +72,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i6);
                     break;
                 case R.id.RSSfeed:
-                    String url2 = "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml";
-                    Intent i3 = new Intent(Intent.ACTION_VIEW);
-                    i3.setData(Uri.parse(url2));
-                    startActivity(i3);
+                    Intent i7 = new Intent(MainActivity.this, RSSActivity.class);
+                    startActivity(i7);
                     break;
             }
             return true;
@@ -170,16 +168,15 @@ public class MainActivity extends AppCompatActivity {
                 bar.setVisibility(View.GONE);
                 break;
             case R.id.rss:
-                String url = "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml";
-                Intent i7 = new Intent(Intent.ACTION_VIEW);
-                i7.setData(Uri.parse(url));
+                Intent i7 = new Intent(MainActivity.this, RSSActivity.class);
                 startActivity(i7);
+                bar.setVisibility(View.GONE);
                 break;
             case R.id.alertDialog:
                 builder.setMessage(R.string.Dialog_message) .setTitle(R.string.Dialog_title);
-                builder.setMessage("Please slide from left to right in to open navigtion drawer.\n" +
-                        "The BBC icon brings you to the RSS feed.\n" +
-                        "The question mark provides a snackbar.")
+                builder.setMessage("To open navigation drawer, tap the drawer button on the far left of the toolbar.\n\n" +
+                        "The Toolbar icons serve as a navigation method to other news websites.\n\n" +
+                        "Both buttons provide a snackbar.")
                         .setCancelable(true)
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             @Override

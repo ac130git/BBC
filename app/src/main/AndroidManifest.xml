@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BBC">
-        <activity android:name=".WorkActivity"></activity>
+        <activity android:name=".RSSActivity"></activity>
+        <activity android:name=".WorkActivity" />
         <activity android:name=".MusicActivity" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".SportActivity" />

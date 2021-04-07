@@ -6,6 +6,10 @@
     android:background="@drawable/background"
     tools:context="com.example.bbc.Fragment1">
 
+
+
+
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
@@ -16,3 +20,5 @@
 
 
 </FrameLayout>
+
+
