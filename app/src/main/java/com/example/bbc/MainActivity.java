@@ -1,49 +1,44 @@
 package com.example.bbc;
 
+//importing content, views, widgets..
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.service.autofill.OnClickAction;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.os.Bundle;
-import android.content.Intent;
-import android.view.View;
-import android.widget.Button;
-import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    //initializing variables
     private WebView webView;
     public ProgressBar bar;
-    public EditText textView2;
+    public EditText editText;
     AlertDialog.Builder builder;
     private NavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new NavigationView.OnNavigationItemSelectedListener() {
 
+        //switch case statement that gives action to the navigation drawer items
+        @SuppressLint("NonConstantResourceId")
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
@@ -80,29 +75,31 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
+    //activity lifecycle for start up of this activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar3);
+        Toolbar myToolbar = findViewById(R.id.toolbar3);
         setSupportActionBar(myToolbar);
         myToolbar.setTitle("");
         Button info = findViewById(R.id.info);
         bar = findViewById(R.id.bar);
-        textView2 = findViewById(R.id.textView2);
+        editText = findViewById(R.id.textView2);
         builder = new AlertDialog.Builder(this);
-        webView = (WebView) findViewById(R.id.webView);
+        webView = findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("Https://www.bbc.com/news");
         Button news = findViewById(R.id.news);
         DrawerLayout drawer = findViewById(R.id.drawerLayout);
-        NavigationView navigation = (NavigationView) findViewById(R.id.navlayout);
+        NavigationView navigation = findViewById(R.id.navlayout);
         navigation.setNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
+        //creating onClickListener that corresponds to two buttons in the activity
         View.OnClickListener listener = new View.OnClickListener() {
 
+            //giving action to two buttons in activity
+            @SuppressLint("NonConstantResourceId")
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
@@ -119,11 +116,12 @@ public class MainActivity extends AppCompatActivity {
                         snackbar2.show();
                         break;
             }
-        };
+        }
     };
         news.setOnClickListener(listener);
        info.setOnClickListener(listener);
     }
+    //inflating menu for navigation drawer and toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -132,12 +130,13 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
 
     }
-
+//switch case statement for toolbar
+    @SuppressLint({"NonConstantResourceId", "RtlHardcoded"})
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.drawer:
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawerLayout);
+                DrawerLayout drawer = findViewById(R.id.drawerLayout);
                 drawer.openDrawer((Gravity.LEFT));
                 bar.setVisibility(View.GONE);
                 webView.setVisibility(View.GONE);
@@ -172,10 +171,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i7);
                 bar.setVisibility(View.GONE);
                 break;
+                //alert dialog with instructions to activity
             case R.id.alertDialog:
                 builder.setMessage(R.string.Dialog_message) .setTitle(R.string.Dialog_title);
                 builder.setMessage("To open navigation drawer, tap the drawer button on the far left of the toolbar.\n\n" +
                         "The Toolbar icons serve as a navigation method to other news websites.\n\n" +
+                        "The RSS icons brings you to an RSS feed\n\n" +
                         "Both buttons provide a snackbar.")
                         .setCancelable(true)
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {

@@ -1,4 +1,5 @@
 package com.example.bbc;
+
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment;
 
 public class Fragment1 extends Fragment {
 
+    //activity lifecycle for start up of this activity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

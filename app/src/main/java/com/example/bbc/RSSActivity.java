@@ -22,6 +22,7 @@ import java.util.List;
 
 public class RSSActivity extends ListActivity
 {
+    //initiliazing variables
     List title;
     List links;
     List description;
@@ -30,6 +31,8 @@ public class RSSActivity extends ListActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        //creating new AsyncTask
         new MyAsyncTask().execute();
 
         
@@ -54,7 +57,7 @@ public class RSSActivity extends ListActivity
                 xpp.setInput(getInputStream(url), "UTF_8");
                 boolean insideItem = false;
 
-
+                //getting title that will display on screen and link that will have action
                 int eventType = xpp.getEventType();
                 while (eventType != XmlPullParser.END_DOCUMENT)
                 {
@@ -73,11 +76,6 @@ public class RSSActivity extends ListActivity
                         {
                             if (insideItem)
                                 links.add(xpp.nextText());
-                        }
-                        else if (xpp.getName().equalsIgnoreCase("description"))
-                        {
-                            if (insideItem)
-                                description.add(xpp.nextText());
                         }
                     }
                     else if(eventType==XmlPullParser.END_TAG && xpp.getName().equalsIgnoreCase("item"))

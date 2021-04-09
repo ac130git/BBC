@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 public class Fragment2 extends Fragment {
 
+    //activity lifecycle for start up of this activity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

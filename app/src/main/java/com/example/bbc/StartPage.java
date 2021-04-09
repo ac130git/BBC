@@ -3,6 +3,7 @@ package com.example.bbc;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class StartPage extends AppCompatActivity {
 
     AlertDialog.Builder builder;
 
+        //activity lifecycle for start up of this activity
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -25,6 +27,7 @@ public class StartPage extends AppCompatActivity {
 
                 View.OnClickListener listener = new View.OnClickListener() {
 
+                    @SuppressLint("NonConstantResourceId")
                     @Override
                     public void onClick(View v) {
                         switch (v.getId()) {
