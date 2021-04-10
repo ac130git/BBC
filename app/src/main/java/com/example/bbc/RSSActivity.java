@@ -45,7 +45,6 @@ public class RSSActivity extends ListActivity
         {
             title = new ArrayList();
             links = new ArrayList();
-            description = new ArrayList();
 
             try
             {
